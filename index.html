@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HSC Study Planner - 27 Batch</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>📚 HSC Study Planner</h1>
+            <p class="subtitle">HSC 27 Batch - Target: June 6, 2025</p>
+            <div class="countdown">
+                <div class="time-box">
+                    <span id="daysLeft">0</span>
+                    <p>Days Left</p>
+                </div>
+                <div class="time-box">
+                    <span id="weeksLeft">0</span>
+                    <p>Weeks Left</p>
+                </div>
+            </div>
+        </header>
+
+        <!-- Today's Statistics -->
+        <section class="stats-section">
+            <div class="stat-card">
+                <h3>Today's Target</h3>
+                <p class="stat-value">10 Hours</p>
+            </div>
+            <div class="stat-card">
+                <h3>Total Chapters</h3>
+                <p class="stat-value" id="totalChapters">0</p>
+            </div>
+            <div class="stat-card">
+                <h3>Completed</h3>
+                <p class="stat-value" id="completedChapters">0</p>
+            </div>
+            <div class="stat-card">
+                <h3>Progress</h3>
+                <p class="stat-value" id="progressPercent">0%</p>
+            </div>
+        </section>
+
+        <!-- Today's To-Do List -->
+        <section class="todo-section">
+            <h2>📋 Today's Study Plan</h2>
+            <div class="date-selector">
+                <input type="date" id="dateSelector" value="">
+                <button onclick="generateTodayPlan()">Generate Plan</button>
+            </div>
+            <div id="todayPlan" class="todo-list">
+                <!-- Generated dynamically -->
+            </div>
+        </section>
+
+        <!-- Progress Bar -->
+        <section class="progress-section">
+            <h2>Overall Progress</h2>
+            <div class="progress-bar-container">
+                <div class="progress-bar" id="progressBar" style="width: 0%"></div>
+            </div>
+            <p id="progressText">0/0 chapters completed</p>
+        </section>
+
+        <!-- Subject-wise View -->
+        <section class="subjects-section">
+            <h2>📖 Subjects Overview</h2>
+            <div class="subject-tabs">
+                <button class="tab-btn active" onclick="showSubject('all')">All</button>
+                <button class="tab-btn" onclick="showSubject('physics')">Physics</button>
+                <button class="tab-btn" onclick="showSubject('chemistry')">Chemistry</button>
+                <button class="tab-btn" onclick="showSubject('biology')">Biology</button>
+                <button class="tab-btn" onclick="showSubject('math')">Math</button>
+                <button class="tab-btn" onclick="showSubject('ict')">ICT</button>
+                <button class="tab-btn" onclick="showSubject('bangla')">Bangla</button>
+            </div>
+            <div id="subjectContent" class="subject-content">
+                <!-- Generated dynamically -->
+            </div>
+        </section>
+
+        <!-- High Priority Chapters -->
+        <section class="priority-section">
+            <h2>⭐ High Priority Chapters</h2>
+            <div id="priorityChapters" class="chapter-grid">
+                <!-- Generated dynamically -->
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
